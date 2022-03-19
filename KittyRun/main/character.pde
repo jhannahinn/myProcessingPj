@@ -1,9 +1,3 @@
-class Obj{
-  PImage[] diversity;
-  float posX, posY;
-  
-}
-
 class CatChar{
   PImage[] motion;
   float posX, posY;
@@ -60,5 +54,10 @@ class CatChar{
       }
     }
     image(jumpingMotion, posX, posY, 120, 120);
+  }
+  
+  void showCollisionBox() {
+    fill(100, 100, 100, 100);
+    rect(posX + 60 - 40, posY + 40 + 30, 80, 40);
   }
 } CatChar myKitty;

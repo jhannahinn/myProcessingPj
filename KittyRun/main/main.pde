@@ -1,11 +1,15 @@
 int isJump;
+int objSpeed;
 
 void setup() {
   size(640, 360);
   frameRate(30);
   
+  objSpeed = 8;
+  
   myKitty = new CatChar();
-  floors = new Floor();
+  floors = new Floor(objSpeed);
+  flowers = new Flower(objSpeed);
   
   isJump = 0;
 }
@@ -15,6 +19,7 @@ void draw() {
   noStroke();
 
   floors.run();
+  flowers.run();
   
   if (keyPressed) {
     if(key == CODED) {
@@ -33,4 +38,6 @@ void draw() {
     } // terminate jump action
     else myKitty.jump();
   }
+  
+  myKitty.showCollisionBox();
 }

@@ -2,16 +2,14 @@ class Floor{
   PImage[] diversity;
   PImage[] motion;
   float posX, posY;
-  int imageIndex;
-  int motionIndex;
   int speed;
   int check;
   
-  public Floor() {
+  public Floor(int _speed) {
     posX = 120;
     posY = 220;
     diversity = new PImage[3];
-    speed = 6;
+    speed = _speed;
     check = 0;
     diversity[0] = loadImage("floor1.png");
     diversity[1] = loadImage("floor2.png");
@@ -38,9 +36,6 @@ class Floor{
       posX = 120;
       check = 1;
     }
-    //for (int i = 0; i < 7; i++) {
-    //  image(motion[i], posX + (i - 1) * 120, posY, 120, 120);
-    //}
     image(motion[0], posX + (0 - 1) * 120, posY, 120, 120);
     image(motion[1], posX + (1 - 1) * 120, posY, 120, 120);
     image(motion[2], posX + (2 - 1) * 120, posY, 120, 120);
